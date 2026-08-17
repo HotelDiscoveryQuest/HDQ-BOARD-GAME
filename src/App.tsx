@@ -104,7 +104,8 @@ const [rewardClaimed, setRewardClaimed] =
 
   const [round, setRound] = useState(1)
 
-  const [, setSelectedCard] = useState(...)
+  const [, setSelectedCard] =
+  useState<CardType | null>(null)
 
   const [currentQuestion, setCurrentQuestion] =
     useState<Question | null>(null)
@@ -1286,7 +1287,7 @@ useEffect(() => {
     setPlayerData(
       Array.from(
         { length: number },
-        (_, index) => ({
+        () => ({
           name: '',
           playerId: '',
           points: 0,
