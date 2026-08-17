@@ -11,33 +11,6 @@ type CardId = {
   name: string
 }
 
-const physicalCards: CardId[] = [
-  {
-    id: 'HQ-C-001',
-    type: 'C',
-    name: 'Chance'
-  },
-  {
-    id: 'HQ-D-001',
-    type: 'D',
-    name: 'Discovery'
-  },
-  {
-    id: 'HQ-G-001',
-    type: 'G',
-    name: 'Challenge'
-  },
-  {
-    id: 'HQ-A-001',
-    type: 'A',
-    name: 'Attraction'
-  },
-  {
-    id: 'HQ-P-001',
-    type: 'P',
-    name: 'Penalty'
-  }
-]
 
 type BoardSpace = {
   position: number
@@ -86,7 +59,6 @@ const [screen, setScreen] =
   useState<Screen>('home')
 
   const [gameId, setGameId] = useState('')
-  const [continueId, setContinueId] = useState('')
 
   // QR card detected from physical card
   const [qrCardType, setQrCardType] =
@@ -132,8 +104,7 @@ const [rewardClaimed, setRewardClaimed] =
 
   const [round, setRound] = useState(1)
 
-  const [selectedCard, setSelectedCard] =
-    useState<CardType | null>(null)
+  const [, setSelectedCard] = useState(...)
 
   const [currentQuestion, setCurrentQuestion] =
     useState<Question | null>(null)
@@ -2619,11 +2590,7 @@ function moveNextSpace(
             Player Names
           </h2>
 
-          {playerNames.map(
-            (
-              name,
-              index
-            ) => (
+          {playerNames.map(name => ( (
               <input
                 key={index}
                 type="text"
