@@ -2579,7 +2579,6 @@ function moveNextSpace(
     👥 Group Points
   </option>
 </select>
-
 <p>
   {pointMode === 'solo'
     ? 'Each player keeps their own points.'
