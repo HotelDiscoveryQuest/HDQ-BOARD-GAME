@@ -2750,22 +2750,11 @@ function moveNextSpace(
               </button>
 
               <button
-                onClick={() =>
-                  moveNextSpace(
-                    'backward'
-                  )
-                }
-              >
-                ↩️ Move Backward
-              </button>
-
-              <button
   onClick={async () => {
     const totalPoints =
       pointMode === 'group'
         ? playerData.reduce(
-            (total, player) =>
-              total + player.points,
+            (total, player) => total + player.points,
             0
           )
         : currentPlayerInfo?.points || 0
@@ -2773,16 +2762,12 @@ function moveNextSpace(
     const eligible =
       totalPoints >= REWARD_POINTS
 
-    let finalRewardCode =
-      rewardClaimCode
+    let finalRewardCode = rewardClaimCode
 
     if (eligible && !finalRewardCode) {
-      finalRewardCode =
-        generateRewardCode()
+      finalRewardCode = generateRewardCode()
 
-      setRewardClaimCode(
-        finalRewardCode
-      )
+      setRewardClaimCode(finalRewardCode)
 
       localStorage.setItem(
         `hotelDiscoveryQuest_reward_${gameId}`,
@@ -2798,8 +2783,7 @@ function moveNextSpace(
       playerData,
       round,
       pointMode,
-      rewardClaimCode:
-        finalRewardCode,
+      rewardClaimCode: finalRewardCode,
       rewardClaimed
     }
 
@@ -2837,7 +2821,7 @@ function moveNextSpace(
     setScreen('home')
   }}
 >
-💾 Save & Exit
+  💾 Save & Exit
 </button>
 
         </div>
